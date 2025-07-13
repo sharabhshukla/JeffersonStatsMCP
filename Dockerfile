@@ -1,5 +1,10 @@
 FROM python:3.11-slim
-LABEL authors="sharabhshukla"
+LABEL org.opencontainers.image.source="https://github.com/sharabhshukla/jeffersonstatsmcp"
+LABEL org.opencontainers.image.url="https://github.com/sharabhshukla/jeffersonstatsmcp"
+LABEL org.opencontainers.image.documentation="https://github.com/sharabhshukla/jeffersonstatsmcp"
+LABEL org.opencontainers.image.title="JeffersonStats MCP"
+LABEL org.opencontainers.image.description="A comprehensive MCP server providing 40+ statistical analysis tools for AI assistants"
+LABEL org.opencontainers.image.version="0.1.0"
 
 # Set working directory
 WORKDIR /app
