@@ -1,5 +1,6 @@
 import asyncio
 from fastmcp import FastMCP
+from fastmcp.server.server import Request, Response
 from src.basics import basic_stats_mcp
 
 
@@ -11,6 +12,17 @@ mcp = FastMCP(
     port=8080,
 
 )
+
+
+@mcp.custom_route("/healthz", methods=["GET"])
+async def healthz(request: Request) -> Response:
+    return Response(content="OK", status_code=200, headers={"Content-Type": "text/plain"})
+
+
+@mcp.custom_route("/", methods=["GET"])
+async def health_root(request: Request) -> Response:
+    return Response(content="OK", status_code=200)
+
 
 async def setup_main_server():
     await mcp.import_server(server=basic_stats_mcp, prefix="/basic-stats")
