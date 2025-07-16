@@ -19,11 +19,6 @@ async def healthz(request: Request) -> Response:
     return Response(content="OK", status_code=200, headers={"Content-Type": "text/plain"})
 
 
-@mcp.custom_route("/", methods=["GET"])
-async def health_root(request: Request) -> Response:
-    return Response(content="OK", status_code=200)
-
-
 async def setup_main_server():
     await mcp.import_server(server=basic_stats_mcp, prefix="/basic-stats")
 
