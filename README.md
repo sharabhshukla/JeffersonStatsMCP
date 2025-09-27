@@ -78,7 +78,7 @@ git clone https://github.com/yourusername/JeffersonStats.git
 cd JeffersonStats
 
 # Build the Docker image
-docker build -t jeffersonstats .
+docker build -t jeffersonstats:latest .
 
 # Run the container
 docker run -p 8080:8080 jeffersonstats
